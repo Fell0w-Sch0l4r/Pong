@@ -1,4 +1,4 @@
-from turtle import Screen, Turtle
+from turtle import Screen
 from paddle import Paddle
 
 
@@ -9,8 +9,8 @@ screen.setup(width=800, height=600)
 screen.tracer(0)
 
 
-paddle = Paddle()
-pc = Paddle(player="pc")
+r_paddle = Paddle()
+l_paddle = Paddle(side="left")
 
 
 
@@ -18,8 +18,10 @@ pc = Paddle(player="pc")
 
 
 screen.listen()
-screen.onkey(key="Up", fun=paddle.up)
-screen.onkey(key="Down", fun=paddle.down)
+screen.onkey(key="Up", fun=r_paddle.up)
+screen.onkey(key="Down", fun=r_paddle.down)
+screen.onkey(key="w", fun=l_paddle.up)
+screen.onkey(key="s ", fun=l_paddle.down)
 
 while True:
     screen.update()

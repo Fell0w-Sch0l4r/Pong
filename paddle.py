@@ -2,16 +2,16 @@ from turtle import Turtle
 
 
 class Paddle(Turtle):
-    def __init__(self, shape: str = "square", player: str = "user") -> None:
+    def __init__(self, shape: str = "square", side: str = "right") -> None:
         super().__init__(shape)
         
         self.penup()
         self.color("white")
         self.shapesize(stretch_wid=5, stretch_len=1)
         
-        if player == "user":
+        if side == "right":
             self.setx(x=350)
-        else:
+        elif side == "left":
             self.setx(x=-350)
         
         
