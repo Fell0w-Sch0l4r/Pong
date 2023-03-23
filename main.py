@@ -30,7 +30,7 @@ screen.onkey(key="w", fun=l_paddle.up)
 screen.onkey(key="s ", fun=l_paddle.down)
 
 while True:
-    sleep(0.05)
+    sleep(ball.move_speed)
     screen.update()
     ball.move()
     
