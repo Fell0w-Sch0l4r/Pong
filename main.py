@@ -35,11 +35,13 @@ while True:
     if ball.near_wall():
         ball.bounce("wall")
         
-    if ball.distance(r_paddle) <= 25 or ball.distance(l_paddle) <= 25:
+    if (ball.distance(r_paddle) <= 50 and ball.xcor() >= 320) or (ball.distance(l_paddle) <= 50 and ball.xcor() <= -320):
         ball.bounce("paddle")
         
     if ball.out_of_bounds():
-        break
+        ball.restart()
+        screen.update()
+        sleep(2)
 
 
 
