@@ -8,7 +8,7 @@ class Ball(Turtle):
         self.color("white")
         
         self.x_pace = 10
-        self.y_pace = -10
+        self.y_pace = 10
         
         
         
@@ -26,6 +26,9 @@ class Ball(Turtle):
             return True
         
         
+    def bounce(self, object: str):
         
-    def wall_bounce(self):
-        self.y_pace *= -1
+        if object == "paddle":
+            self.x_pace *= -1
+        elif object == "wall":
+            self.y_pace *= -1
