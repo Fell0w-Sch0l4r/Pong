@@ -37,6 +37,9 @@ while True:
         
     if ball.distance(r_paddle) <= 25 or ball.distance(l_paddle) <= 25:
         ball.bounce("paddle")
+        
+    if ball.out_of_bounds():
+        break
 
 
 
