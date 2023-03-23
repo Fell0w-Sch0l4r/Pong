@@ -28,9 +28,12 @@ screen.onkey(key="w", fun=l_paddle.up)
 screen.onkey(key="s ", fun=l_paddle.down)
 
 while True:
-    sleep(0.1)
+    sleep(0.05)
     screen.update()
     ball.move()
+    
+    if ball.near_wall():
+        ball.wall_bounce()
 
 
 
