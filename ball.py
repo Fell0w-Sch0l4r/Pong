@@ -7,6 +7,8 @@ class Ball(Turtle):
         self.penup()
         self.color("white")
         
+        self.move_speed = 0.05
+        
         self.x_pace = 10
         self.y_pace = 10
         
@@ -32,6 +34,8 @@ class Ball(Turtle):
             self.x_pace *= -1
         elif object == "wall":
             self.y_pace *= -1
+            
+        self.move_speed *= 0.99
             
             
     def out_of_bounds_right(self) -> bool:
