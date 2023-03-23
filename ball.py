@@ -35,5 +35,10 @@ class Ball(Turtle):
             
             
     def out_of_bounds(self) -> bool:
-        if self.xcor() >= 395 or self.xcor() <= -395:
+        if self.xcor() >= 398 or self.xcor() <= -398:
             return True
+        
+        
+    def restart(self):
+        self.setpos(x=0, y=0)
+        self.x_pace *= -1
