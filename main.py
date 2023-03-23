@@ -33,7 +33,10 @@ while True:
     ball.move()
     
     if ball.near_wall():
-        ball.wall_bounce()
+        ball.bounce("wall")
+        
+    if ball.distance(r_paddle) <= 25 or ball.distance(l_paddle) <= 25:
+        ball.bounce("paddle")
 
 
 
