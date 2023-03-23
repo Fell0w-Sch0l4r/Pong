@@ -2,6 +2,7 @@ from turtle import Screen
 from paddle import Paddle
 from ball import Ball
 from time import sleep
+from scoreboard import ScoreBoard
 
 
 screen = Screen()
@@ -15,6 +16,7 @@ r_paddle = Paddle()
 l_paddle = Paddle(side="left")
 
 ball = Ball()
+score_board = ScoreBoard()
 
 
 
@@ -38,7 +40,14 @@ while True:
     if (ball.distance(r_paddle) <= 50 and ball.xcor() >= 320) or (ball.distance(l_paddle) <= 50 and ball.xcor() <= -320):
         ball.bounce("paddle")
         
-    if ball.out_of_bounds():
+    if ball.out_of_bounds_right():
+        score_board.increase_score("lpaddle")
+        ball.restart()
+        screen.update()
+        sleep(2)
+        
+    if ball.out_of_bounds_left():
+        score_board.increase_score("rpaddle")
         ball.restart()
         screen.update()
         sleep(2)
